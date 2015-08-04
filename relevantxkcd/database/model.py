@@ -7,6 +7,7 @@ class Comic(Base):
     __tablename__ = 'comic'
 
     id = Column(Integer, primary_key=True)
+    month = Column(String)
     num = Column(Integer, nullable=False)
     link = Column(String)
     year = Column(String)
@@ -19,10 +20,10 @@ class Comic(Base):
     day = Column(String)
 
     def __repr__(self):
-        return ("<Comic(num='{:s}', link='{:s}', year='{:s}', "
+        return ("<Comic(month='{:s}, num='{:d}', link='{:s}', year='{:s}', "
                 "news='{:s}', safe_title='{:s}', transcript='{:s}', "
                 "alt='{:s}', img='{:s}', title='{:s}', day='{:s}')>"
-                .format(self.num, self.link, self.year,
+                .format(self.month, self.num, self.link, self.year,
                         self.news, self.safe_title, self.transcript,
                         self.alt, self.img, self.title, self.day))
 
