@@ -1,3 +1,3 @@
 from .model import Comic
 
-from .database import Session
+from .database import session_scope, Session
