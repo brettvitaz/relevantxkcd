@@ -30,8 +30,9 @@ class App:
 
     def shutdown(self, signum, frame):
         print('Shutting down application.')
-        self._scheduler.shutdown()
+        # Shut down downloader first.
         xkcd_scraper.shutdown()
+        self._scheduler.shutdown()
         sys.exit(signum)
 
     def _schedule_jobs(self):
